@@ -1,0 +1,48 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+ 
+<div class="row mt-5">
+	 
+	<div class="col-lg-3">
+		<select id="selLaunchSuccess" class="form-control">
+			<option value="">Select Launch Success</option>
+			<option value="@true">Success</option>
+			<option value="@false">Failure</option>
+		</select>
+	</div>
+	<div class="col-lg-3">
+		<select id="selLandSuccess" class="form-control">
+			<option value="">Select Land Success</option>
+			<option value="@true">Success</option>
+			<option value="@false">Failure</option>
+		</select>
+	</div>
+	<div class="col-lg-3">
+		<select id="selLaunchYear" class="form-control">
+			<option value="">Select Launch Year</option>
+			@for (int year = 1990; year <= DateTime.Now.Year; year++) {
+				<option value="@year">@year</option>
+			}
+		</select>
+	</div>
+	<div class="col-lg-3">
+		<input id="btnFilterData" type="button" value="Filter Data" class="btn btn-primary" />
+	</div>
+ 
+
+</div>
+
+<div class="float-right" style="display:none">
+	<select class="float-right" id="selPageSize">
+		<option value="100" selected>Select Page Size</option>
+		<option value="100">100</option>
+		<option value="200">200</option>
+		<option value="300">300</option>
+	</select>
+</div>
+
+<div class="row mt-5" id="divResult">
+
+</div>
